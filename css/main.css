@@ -201,7 +201,7 @@ body {
   height: 75vh;
   text-align: center;
   color: #fff;
-  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/sea640.jpg");
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(48, 155, 51, 0.75)), url("../img/sea640.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: scroll;
@@ -250,7 +250,7 @@ body {
 .hero-img {
   position: relative;
   padding: 10em 2em;
-  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/lofoten640.jpg");
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(48, 155, 51, 0.75)), url("../img/lofoten640.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: scroll;
