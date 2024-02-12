@@ -20,6 +20,8 @@ body {
   font-size: 1.6rem;
 }
 
+
+
 //==========================================
 // NAV
 //==========================================
@@ -131,7 +133,11 @@ body {
 .nav-items-animation {
   animation: navItemsAnimation 1s both;
 }
-
+.black-bars-color,
+.black-bars-color::after,
+.black-bars-color::before {
+  background-color: $dark;
+}
 //==========================================
 // HEADER
 //==========================================
@@ -253,7 +259,7 @@ body {
         background-image: $blue-gradient, url("../img/mountains4-640.jpg");
       }
       &--third {
-        background-image: $purple1-gradient, url("../img/mountains5-640.jpg");
+        background-image: $green-gradient, url("../img/mountains5-640.jpg");
       }
       &-title {
         font-family: "Dancing Script", cursive;
@@ -336,6 +342,8 @@ body {
     }
     &-info {
       padding: 2em;
+      background-color: $pure-white;
+      z-index: 10;
     }
     &-heading {
       margin-bottom: 0.5em;
@@ -355,6 +363,146 @@ body {
         background-color: $secondary-color;
       }
     }
+  }
+}
+//==========================================
+// REVIEWS
+//==========================================
+@media (max-width: 767px) {
+  .reviews.section-padding {
+    padding: 6em 0;
+  }
+}
+
+.reviews {
+  &__box {
+    position: relative;
+    margin: 2em;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px #2e2e2e2e;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(0.95);
+    }
+  }
+  &__box-img {
+    position: absolute;
+    top: 8%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+
+    img {
+      height: 80px;
+      width: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  &__box-quote {
+    margin-bottom: 1em;
+    font-size: 3rem;
+    color: $main-color;
+  }
+  &__box-text {
+    margin-bottom: 1em;
+    font-size: 1.4rem;
+    color: $dark;
+  }
+}
+
+//==========================================
+// CONTACT
+//==========================================
+
+.contact {
+  position: relative;
+  background-color: $light-white;
+  overflow: hidden;
+
+  .white-block-left {
+    background-color: $dark;
+  }
+  &__form,
+  &__form-top {
+    display: flex;
+    flex-direction: column;
+  }
+  &__form-label {
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+  }
+  &__form-input {
+    @include contactForm;
+  }
+  &__form-textarea {
+    @include contactForm;
+
+    max-width: 100%;
+    min-height: 150px;
+  }
+  &__form-btn {
+    align-self: flex-end;
+    padding: 1em;
+    width: 100%;
+    max-width: 300px;
+    color: $pure-white;
+    border: none;
+    border-radius: 8px;
+    background-color: $main-color;
+    cursor: pointer;
+    &::before {
+      background-color: $secondary-color;
+    }
+  }
+}
+//==========================================
+// FOOTER
+//==========================================
+.footer {
+  color: $pure-white;
+  background-color: $dark;
+  .wrapper {
+    padding: 6em 2em 2em;
+  }
+
+  &__box {
+    font-size: 1.4rem;
+  }
+  &__box-desktop {
+    display: none;
+  }
+
+  &__box-title {
+    margin-bottom: 1em;
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+
+  &__box-social {
+    margin: 2em 0 1em;
+  }
+
+  &__box-link {
+    padding: 0 0.3em;
+    font-size: 3.6rem;
+    color: $pure-white;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:hover {
+      color: $light-white;
+    }
+  }
+  &__bottom-text {
+    padding: 2em;
+    text-align: center;
   }
 }
 
@@ -405,17 +553,20 @@ body {
         justify-content: space-between;
       }
 
-      &-heading{
+      &-heading {
         margin-bottom: 0.5em;
         font-size: 3.6rem;
       }
 
-      &-btn{
+      &-btn {
         padding: 1em;
       }
     }
   }
 }
+
+//MEDIA 768px//
+
 @media (min-width: 768px) {
   .white-block {
     height: 50px;
@@ -461,7 +612,40 @@ body {
       width: 45%;
     }
   }
+  .footer {
+    &__boxes {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__box-desktop {
+      display: block;
+    }
+    &__box {
+      margin: 0 2em;
+      width: 25%;
+
+      &:first-child {
+        width: 50%;
+      }
+    }
+    &__box-title {
+      font-size: 2.4rem;
+    }
+
+    &__box-list {
+      list-style: none;
+    }
+    &__box-list-item {
+      margin-bottom: 1em;
+      a {
+        color: $light-white;
+        text-decoration: none;
+      }
+    }
+  }
 }
+
+//MEDIA 992px//
 
 @media (min-width: 992px) {
   .burger-btn {
@@ -470,7 +654,7 @@ body {
   }
 
   .header {
-    background-image: $purple1-gradient, url(../img/sea1920.jpg);
+    background-image: $blue-gradient, url(../img/sea1920.jpg);
     &__heading {
       font-size: 10rem;
     }
@@ -499,7 +683,7 @@ body {
   }
   .hero-img {
     padding: 40rem 2em;
-    background-image: $purple1-gradient, url("../img/lofoten1920.jpg");
+    background-image: $green-gradient, url("../img/lofoten1920.jpg");
     &__title {
       font-size: 7.2rem;
     }
@@ -508,7 +692,22 @@ body {
       max-width: 900px;
     }
   }
+  .offers {
+    background-image: $green-gradient, url("../img/mountains6-1920.jpg");
+    &__option {
+      &-img {
+        object-fit: cover;
+        height: 300px;
+      }
+      &-text {
+        font-size: 1.5rem;
+      }
+    }
+  }
 }
+
+//MEDIA 1100px//
+
 @media (min-width: 1100px) {
   .mountains {
     &__card {
